@@ -62,95 +62,133 @@ body {
 
 /* Barra de navegación */
 nav {
-    position: fixed;
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 30px;
-    padding: 10px 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    box-shadow: 18px 24px 54px -22px rgba(0,0,0,0.64);
-    z-index: 1000;
+  position: fixed;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
+  padding: 10px 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  box-shadow: 18px 24px 54px -22px rgba(0,0,0,0.64);
+  z-index: 1000;
 }
 
 /* Contenedor del Dock Navegacion */
 .dock {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
 }
 
 .dock-item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    cursor: pointer;
-    transition: transform 0.2s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
 }
 
 .dock-item:hover {
-    transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 /* Estilos de los iconos */
 .dock-item .icon {
-    width: 35px;
-    height: 35px;
-    background: rgba(187, 225, 250, 0.1);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.2s ease-in-out, background 0.2s ease-in-out;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  width: 35px;
+  height: 35px;
+  background: rgba(187, 225, 250, 0.1);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s ease-in-out, background 0.2s ease-in-out;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .dock-item .icon img {
-    width: 110%;
-    height: 110%;
-    object-fit: cover;
-    border-radius: 50%;
-    transform: scale(1.1);
+  width: 110%;
+  height: 110%;
+  object-fit: cover;
+  border-radius: 50%;
+  transform: scale(1.1);
 }
 
 .dock-item .icon svg {
-    width: 20px;
-    height: 20px;
-    color: var(--accent);
+  width: 20px;
+  height: 20px;
+  color: var(--accent);
 }
 
 .dock-item:hover .icon {
-    background: rgba(187, 225, 250, 0.2);
-    transform: scale(1.2) translateX(22px);
+  background: rgba(187, 225, 250, 0.2);
+  transform: scale(1.2) translateX(22px);
 }
 
 .dock-item:hover ~ .dock-item .icon {
-    transform: scale(1.2) translateX(3px);
+  transform: scale(1.2) translateX(3px);
 }
 
 /* Punto indicador */
 .dock-item .indicator {
-    width: 6px;
-    height: 6px;
-    background: var(--accent);
-    border-radius: 50%;
-    position: absolute;
-    bottom: -10px;
-    opacity: 0;
-    transition: opacity 0.2s ease, transform 0.2s ease;
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  position: absolute;
+  bottom: -10px;
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
 .dock-item.active .indicator {
-    opacity: 1;
-    transform: translateX(-50%) scale(1.2);
+  opacity: 1;
+  transform: translateX(-50%) scale(1.2);
+}
+ 
+.dock-item {
+position: relative;  
 }
 
+.dock-item .tooltip {
+position: absolute;
+left: 210%;  
+top: 50%;  
+transform: translateY(-50%);  
+background: rgba(235, 232, 232, 0.897);
+color: rgb(0, 0, 0);  
+padding: 5px 10px;
+border-radius: 8px;  
+font-size: 12px;
+opacity: 0; 
+visibility: hidden;
+transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+white-space: nowrap;  
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  
+transform: translateY(-50%) translateX(-5px);  
+}
+ 
+.dock-item .tooltip::before {
+content: '';
+position: absolute;
+left: -6px;
+top: 50%;
+transform: translateY(-50%);
+border-width: 6px 6px 6px 0;
+border-style: solid;
+border-color: transparent rgba(235, 232, 232, 0.897) transparent transparent;
+}
+
+.dock-item:hover .tooltip {
+opacity: 1;  
+visibility: visible;
+transform: translateY(-50%) translateX(0); 
+}
 /* ========================= Estilos de JICM ===========================*/
 /* JICM */
 .full-screen-section {
@@ -191,6 +229,42 @@ nav {
 .icon-link:hover {
     transform: translateY(-3px); /* Efecto de elevación */
     color: var(--secondary); /* Cambiar color al hacer hover */
+}
+
+/* Estilos del tooltip */
+.icon-link .tooltip {
+  position: absolute;
+  left: 120%; /* Posición a la derecha del ícono */
+  top: 50%; /* Centra verticalmente */
+  transform: translateY(-50%); /* Centra verticalmente */
+  background: rgba(235, 232, 232, 0.897); /* Fondo del tooltip */
+  color: rgb(0, 0, 0); /* Color del texto */
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  opacity: 0; /* Inicialmente invisible */
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Flecha del tooltip */
+.icon-link .tooltip::before {
+  content: '';
+  position: absolute;
+  right: 100%; /* Posición de la flecha (a la izquierda del tooltip) */
+  top: 50%; /* Centra verticalmente */
+  transform: translateY(-50%);
+  border-width: 6px 6px 6px 0; /* Flecha apuntando a la izquierda */
+  border-style: solid;
+  border-color: transparent rgba(235, 232, 232, 0.897) transparent transparent;
+}
+
+/* Mostrar tooltip al hacer hover */
+.icon-link:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
 }
 
 /* Tamaño de los íconos */
@@ -1041,6 +1115,55 @@ nav {
   grid-template-columns: repeat(1, 1fr); /* 2 columnas */
 }
 
+/* Estilos del icon-link */
+.icon-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent); /* Color del ícono */
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.icon-link:hover {
+  transform: translateY(-3px); /* Efecto de elevación */
+  color: var(--secondary); /* Cambiar color al hacer hover */
+}
+
+
+.icon-link .tooltip {
+  position: absolute;
+  left: 50%; 
+  top: -30px; 
+  transform: translateX(-50%); 
+  background: rgba(235, 232, 232, 0.897); 
+  color: rgb(0, 0, 0); 
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  white-space: nowrap; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.icon-link .tooltip::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -6px;  
+  transform: translateX(-50%);
+  border-width: 6px 6px 0 6px;
+  border-style: solid;
+  border-color: rgba(235, 232, 232, 0.897) transparent transparent transparent;
+}
+ 
+.icon-link:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+}
 
 }
 
