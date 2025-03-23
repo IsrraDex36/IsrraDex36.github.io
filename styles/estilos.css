@@ -1011,6 +1011,27 @@ transform: translateY(-50%) translateX(0);
     padding: 0px;
     gap: 10px;
   }
+  .dock-item .tooltip {
+    position: absolute;
+    left: 50%; /* Centra horizontalmente */
+    top: 100%; /* Coloca el tooltip debajo del ícono */
+    
+  }
+   
+  .dock-item .tooltip::before {
+    
+    left: 50%; /* Centra la flecha horizontalmente */
+    top: -6px; /* Coloca la flecha justo encima del tooltip */
+    transform: translateX(-50%);
+    border-width: 0 6px 6px 6px; /* Forma de la flecha */
+    
+  }
+   
+  .dock-item:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0); /* Mueve el tooltip a su posición final */
+  }
 
 } 
 @media (max-width: 768px) { 
@@ -1164,7 +1185,16 @@ transform: translateY(-50%) translateX(0);
   opacity: 1;
   visibility: visible;
 }
+.about-window{
+  width: 390px;
+}
 
+}
+
+@media (max-width: 376px) {
+  .about-window{
+    width: 300px;
+  }
 }
 
 @media (max-width: 320px) {
@@ -1193,4 +1223,9 @@ transform: translateY(-50%) translateX(0);
   width: 30px;
   height: 30px;
 }
+
+.about-window{
+  width: 290px;
+}
+
 }
