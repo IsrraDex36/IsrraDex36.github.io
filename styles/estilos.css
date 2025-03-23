@@ -1191,6 +1191,12 @@ transform: translateY(-50%) translateX(0);
 
 }
 
+@media (max-width: 390px) {
+  .about-window{
+    width: 340px;
+  }
+}
+
 @media (max-width: 376px) {
   .about-window{
     width: 300px;
