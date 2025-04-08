@@ -85,6 +85,25 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+  const dockItems = document.querySelectorAll('.dock-item');
+  
+  dockItems.forEach(item => {
+      item.addEventListener('click', function() {
+          // Remueve la clase de cualquier elemento que la tenga
+          dockItems.forEach(i => i.classList.remove('clicked'));
+          
+          // Agrega la clase al elemento clickeado
+          this.classList.add('clicked');
+          
+          // Remueve la clase después de que termine la animación
+          setTimeout(() => {
+              this.classList.remove('clicked');
+          }, 400);
+      });
+  });
+});
+
 // ** Mantenimiento **
 document.addEventListener("DOMContentLoaded", () => {
   const btnVerMas = document.getElementById("btnVerMas");

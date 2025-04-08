@@ -93,9 +93,24 @@ nav {
   cursor: pointer;
   transition: transform 0.2s ease-in-out;
 }
+.dock-item.clicked .icon {
+  animation: jumpRight 0.4s ease-out forwards;
+}
+
+@keyframes jumpRight {
+  0% {
+      transform: translateX(20);
+  }
+  50% {
+      transform: translateX(35px);
+  }
+  100% {
+      transform: translateX(2);
+  }
+}
 
 .dock-item:hover {
-  transform: scale(1.2);
+  transform: scale(1.0);
 }
 
 /* Estilos de los iconos */
