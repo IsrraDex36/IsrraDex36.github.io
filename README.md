@@ -1,6 +1,67 @@
-Mi Portafolio
+# 🚀 Portafolio Profesional - Jonathan Isrrael Caballero Morales  
+<h3 align="center">Portafolio interactivo de un Ingeniero de Software | Desarrollador Full Stack Jr</h3>  
 
-¡Bienvenido/a a mi portafolio! Aquí encontrarás una recopilación de mis proyectos, habilidades y experiencias que reflejan mi pasión por el desarrollo web. Este espacio está diseñado para mostrar mi crecimiento profesional, creatividad y dedicación en cada proyecto que emprendo.
+![370shots_so](https://github.com/user-attachments/assets/9b3fb515-df4b-434a-97bc-3b060a8025f8)
 
-![image](https://github.com/user-attachments/assets/7ebcc294-e6ea-44c0-a86d-610e2c07da38)
 
+## 🌟 Características Principales
+
+### 💼 Portafolio profesional  
+- Exhibición completa de habilidades técnicas  
+- Detalle de experiencia laboral y proyectos destacados  
+- Presentación interactiva de logros académicos  
+
+### 🎨 Diseño moderno  
+- Interfaz limpia con estética minimalista  
+- Animaciones fluidas y transiciones suaves  
+- Efectos visuales cuidadosamente diseñados  
+
+### 📱 Experiencia responsive  
+- Diseño adaptable a todos los dispositivos:  
+  - ✔️ Móviles  
+  - ✔️ Tablets  
+  - ✔️ Desktop  
+- Optimizado para diferentes resoluciones  
+
+### 🌓 Modo oscuro/claro  
+- Toggle para cambio de tema  
+- Detección automática de preferencias del sistema  
+- Diseño accesible y cómodo para la vista  
+
+### 🤖 Asistente de IA integrado  
+- Chatbot interactivo para consultas  
+- Respuestas inteligentes sobre el portafolio  
+- Interfaz conversacional amigable  
+
+### 📊 Visualización de habilidades  
+- Organización por categorías técnicas  
+- Representación gráfica de competencias  
+- Fácil identificación de tecnologías dominadas  
+
+## 🛠️ Stack Tecnológico  
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center" width="96">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="48" height="48" alt="HTML5" />
+        <br><small>HTML5</small>
+      </td>
+      <td align="center" width="96">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="48" height="48" alt="CSS3" />
+        <br><small>CSS3</small>
+      </td>
+      <td align="center" width="96">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="48" height="48" alt="JavaScript" />
+        <br><small>JavaScript</small>
+      </td>
+    </tr>
+    <tr>
+      <td align="center" width="96">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" width="48" height="48" alt="Git" />
+        <br><small>Git</small>
+      </td>
+    </tr>
+  </table>
+</div>
+ 
