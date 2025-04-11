@@ -20,6 +20,17 @@
     --border-color: #334155;
     --transition-fast: 0.2s ease;
     --text-light: #dac614;
+    
+    --color-tarjeta: #23252cc2;
+    --color-accento: #0505056c;
+    --texto-primario: #e6e6e6;
+    --texto-secundario: #b8b8b8;
+    --rojo: #ff5c5cda;
+    --amarillo: #ffbe44e1;
+    --verde: #00ca4d93;
+    --azul: #4362eeaf;
+    --morado: #7209b7;
+    --naranja: #ff7b00;
 }
 
 body.light-mode {
@@ -406,125 +417,120 @@ transform: translateY(-50%) translateX(0);
   }
 /* ====================== TERMINAL ======================*/
   /* Terminal card */
-.terminal-card { 
-    justify-self: center;
-    background-color: #282c34;
-    width: 850px;
-    transform: translateY(-40px);
-    border-radius: 0.5rem;
-    display: flex;
-    flex-direction: column;
-    padding: 0.5rem;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-  }
-  
-  .terminal-header {
-    display: flex;
-    gap: 0.25rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid #3e4451;
-    margin-bottom: 0.5rem;
-  }
-  
-  .circle {
-    width: 0.75rem;
-    height: 0.75rem;
-    border-radius: 9999px;
-  }
-  
-  .bg-red {
-    background-color: #ff5f56;
-  }
-  
-  .bg-yellow {
-    background-color: #ffbd2e;
-  }
-  
-  .bg-green {
-    background-color: #27c93f;
-  }
-  
-  .terminal-content {
-    flex-grow: 1;
-    color: #abb2bf;
-    padding: 0.75rem 0.25rem;
-  }
-  
-  .terminal-prompt {
-    color: #61afef;
-    margin-bottom: 0.75rem;
-  }
-  
-  .terminal-prompt span {
-    color: #98c379;
-  }
-  
-  .skills-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem; /* Aumenté el espacio entre los iconos */
-    margin-top: 1rem;
-    margin-bottom: 2rem; /* Espacio adicional después de cada contenedor de habilidades */
-  }
-  
-  .skill-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100px; /* Aumenté el ancho para acomodar iconos más grandes */
-    transition: transform 0.3s ease;
-  }
-  
-  .skill-icon {
-    width: 30px; /* Iconos más grandes */
-    height: 30px; /* Iconos más grandes */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 8px;
-    padding: 0.5rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .skill-icon img {
-    max-width: 100%;
-    max-height: 100%;
-  }
-  
-  .skill-name {
-    font-size: 0.85rem; /* Tamaño de fuente ligeramente más grande */
-    text-align: center;
-  }
-  
-  .comment {
-    color: #7f848e;
-    margin-bottom: 1.5rem; /* Más espacio entre comentarios */
-    font-size: 0.9rem; /* Tamaño de fuente ligeramente más grande */
-  }
+.terminal-ca{
+  width: 69%; 
+  margin: 0 auto; 
+}
 
-/* Cursor parpadeante 7u7 */
-.terminal-prompt {
-    color: #61afef;
-    margin-bottom: 0.75rem;
-    display: inline-block; /* Para que el cursor no salte de línea */
-    position: relative; /* Para posicionar el cursor */
+.contenedor-bento {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.categoria {
+  background-color: var(--color-tarjeta);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+ 
+
+.categoria__cabecera {
+  background-color: var(--color-accento);
+  padding: 0.1rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+.controles-terminal {
+  display: flex;
+  gap: 0.5rem;
+  position: absolute;
+  left: 1rem;
+}
+
+.control {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.control--rojo { background-color: var(--rojo); }
+.control--amarillo { background-color: var(--amarillo); }
+.control--verde { background-color: var(--verde); }
+
+.categoria__titulo {
+  font-weight: 600;
+  color: var(--texto-primario);
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  width: 100%;
+}
+
+.contenedor-tecnologias {
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 1.5rem;
+}
+
+.tecnologia {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform 0.2s ease;
+}
+
+.tecnologia svg{
+  width: 50px;
+  height: 50px;
+}
+
+.tecnologia:hover {
+  transform: scale(1.1);
+}
+
+.tecnologia__icono {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.tecnologia__nombre {
+  font-size: 0.8rem;
+  color: var(--texto-secundario);
+  text-align: center;
+}
+
+/* Estilos específicos por categoría */
+.categoria--frontend { border-top: 3px solid var(--azul); }
+.categoria--backend { border-top: 3px solid var(--verde); }
+.categoria--bases-datos { border-top: 3px solid var(--amarillo); }
+.categoria--herramientas { border-top: 3px solid var(--rojo); }
+.categoria--movil { border-top: 3px solid var(--morado); }
+.categoria--comunicacion { border-top: 3px solid var(--naranja); }
+
+@media (max-width: 768px) {
+  .contenedor-bento {
+      grid-template-columns: 1fr;
   }
   
-  .terminal-prompt::after {
-    content: "|"; /* El cursor */
-    color: #61afef;
-    margin-left: 0.25rem;
-    animation: blink 1s infinite; /* Animación de parpadeo */
+  .contenedor-tecnologias {
+      grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+      gap: 1rem;
   }
-  
-  @keyframes blink {
-    0%, 50% {
-      opacity: 1; /* Visible */
-    }
-    51%, 100% {
-      opacity: 0; /* Invisible */
-    }
-  }
+}
 
 /* ====================== Experiencia ======================*/
 .timeline {  
