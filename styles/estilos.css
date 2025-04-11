@@ -6,9 +6,9 @@
     --primary: #0F4C75;
     --secondary: #3282B8;
     --accent: #ffffff;
-    --color-mas: #0f4061d3;
+    --color-mas: #0d3049c9;
     --text: #f5f5f5;
-    --bg-card: #1d2636;
+    --bg-card: #131933;
     --tw-text-opacity: 1;
     --color-ti-os: 254 240 138;
     --text-primary: #f1f5f9;
@@ -29,7 +29,7 @@ body.light-mode {
     --accent: #000000;
     --text-primary: #000000;
     --text: #1B262C;
-    --bg-card: #1e2b4213;
+    --bg-card: #caccd34f;
     --color-ti-os: 10 109 228;
     --color-mas: #8f9ba39c;
     
@@ -66,7 +66,7 @@ nav {
   left: 20px;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.062);
   backdrop-filter: blur(10px);
   border-radius: 30px;
   padding: 10px 8px;
@@ -75,6 +75,19 @@ nav {
   align-items: center; 
   box-shadow: 18px 24px 54px -22px rgba(0,0,0,0.64);
   z-index: 1000;
+  opacity: 0;
+  animation: aparecer-nav 0.5s ease-out 0.4s forwards;
+}
+
+@keyframes aparecer-nav {
+  from {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+  }
+  to {
+    opacity: 1;
+    backdrop-filter: blur(10px);
+  }
 }
 
 /* Contenedor del Dock Navegacion */
@@ -234,16 +247,39 @@ transform: translateY(-50%) translateX(0);
     margin-top: 20px; /* Espacio arriba de los íconos */
 }
 
-/* Estilos de los enlaces de los íconos */
 .icon-link {
-    color: var(--accent); /* Color del ícono */
-    transition: transform 0.2s ease, color 0.2s ease; /* Transición suave */
+  position: relative;
+  overflow: visible;
 }
 
-/* Efecto al hacer hover */
-.icon-link:hover {
-    transform: translateY(-3px); /* Efecto de elevación */
-    color: var(--secondary); /* Cambiar color al hacer hover */
+.icon-link:hover svg {
+  color: #b3be11a9; 
+  filter: 
+      drop-shadow(0 0 10px currentColor)
+      brightness(1.4);
+}
+
+.icon-link::after {
+  content: '';
+  position: absolute;
+  width: 150%;
+  height: 150%;
+  top: -25%;
+  left: -25%;
+  background: 
+      radial-gradient(circle, currentColor 0%, transparent 70%);
+  opacity: 0;
+  z-index: -1;
+  transition: all 0.6s ease;
+}
+
+.icon-link:hover::after {
+  opacity: 0.3;
+  animation: neonRipple 0.5s ease-out infinite;
+}
+
+@keyframes neonRipple {
+  to { transform: scale(1.5); opacity: 0; }
 }
 
 /* Estilos del tooltip */
@@ -577,11 +613,6 @@ transform: translateY(-50%) translateX(0);
 }
 
 /* ====================== Proyectos ======================*/
-/* Contenedor principal */
-.content-card {
-    width: 100%;  
-}
-
 /* Contenedor de proyectos */
 .proyect-j {
     display: grid;
@@ -604,16 +635,14 @@ transform: translateY(-50%) translateX(0);
   
   /* Project Card */
   .project-card {
-    background-color: var(--bg-card);
-    border-radius: var(--border-radius);
+    background-color: var(--bg-card); 
     overflow: hidden;
     position: relative;
     border-radius: 14px;
     display: flex;
     flex-direction: column;
-    box-shadow: var(--shadow-md);
-    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
-    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal); 
     height: 100%; 
     animation: fadeInUp 0.6s ease forwards;
   }
@@ -623,8 +652,7 @@ transform: translateY(-50%) translateX(0);
   .project-body {
     padding: 24px;
     display: flex;
-    flex-direction: column;
-    border-bottom: 1px solid var(--border-color);
+    flex-direction: column; 
   }
   
   /* Project Header está ahora dentro del body */
@@ -753,6 +781,8 @@ transform: translateY(-50%) translateX(0);
     overflow: hidden;
     border-radius: 13px; 
   }
+
+  /* ====================== Proyectos diseño fin ======================*/
 
    /* Contenedor principal */
 .is { 

@@ -217,7 +217,7 @@ body {
 .floating-back-container {
     position: fixed;
     bottom: 2rem;
-    right: 2rem;
+    left: 2rem;
     display: flex;
     align-items: center;
     z-index: 100;
@@ -251,7 +251,7 @@ body {
 
 .floating-back-tooltip {
     position: absolute;
-    right: 60px;
+    left: 60px;
     background: var(--color-bg-secondary);
     color: var(--color-text-primary);
     padding: 8px 12px;
