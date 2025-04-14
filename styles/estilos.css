@@ -378,6 +378,10 @@ transform: translateY(-50%) translateX(0);
 .container-exp {
     width: 100%; 
   }
+
+  .container-exp-h {
+    width: 100%; 
+  }
   
   /* Contenedor del header */
   .header-exp { 
@@ -795,7 +799,7 @@ transform: translateY(-50%) translateX(0);
     margin: 0 auto;
     width: 75%;
     display: flex; 
-    justify-content: flex-end; /* Alinea el botón a la derecha */
+    justify-content: center;
   }
   
   /* Estilos del botón */
@@ -913,8 +917,7 @@ transform: translateY(-50%) translateX(0);
     border: 2px solid var(--accent-color);
     padding: 10px 20px;
     border-radius: 25px;
-    cursor: pointer;
-    font-family: 'JetBrains Mono', monospace;
+    cursor: pointer; 
     transition: all 0.3s ease;
     text-transform: uppercase;
     font-size: 0.8em;
@@ -997,8 +1000,7 @@ transform: translateY(-50%) translateX(0);
 .btn-maximize { background-color: #28CA41; }
 
 .window-content {
-    padding: 20px;
-    font-family: 'JetBrains Mono', monospace;
+    padding: 20px; 
     font-size: 0.9em;
     line-height: 1.6;
 }
@@ -1082,6 +1084,18 @@ transform: translateY(-50%) translateX(0);
     opacity: 1;
     visibility: visible;
     transform: translateX(-50%) translateY(0); /* Mueve el tooltip a su posición final */
+  }
+
+  @keyframes jumpRight {
+    0% {
+        transform: translateY(20);
+    }
+    50% {
+        transform: translateY(35px);
+    }
+    100% {
+        transform: translateY(2);
+    }
   }
 
 } 
@@ -1175,9 +1189,14 @@ transform: translateY(-50%) translateX(0);
   height: 22px;
 }
 
+nav {
+  display: none; /* Clase para ocultar el nav */
+}
+
 .dock {
   display: none; /* Clase para ocultar el nav */
 }
+
 
 .terminal-card{
   width: 90%;
@@ -1242,9 +1261,75 @@ transform: translateY(-50%) translateX(0);
 
 }
 
+@media (max-width: 431px) { 
+  .text-content-profile h1 {
+    font-size: 1.8em !important;
+    margin-top: 20px;
+  }
+  
+  .container-exp{ 
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .container-exp-h{ 
+    width: 70%;
+    margin: 0 auto;
+  }
+  .categoria__titulo{
+    text-align: end;
+    font-size: 12px;
+  }
+  .content-card{ 
+    width: 85%;
+    margin: 0 auto;
+  }
+
+  .listm{ 
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .profile-container{ 
+    width: 60%;
+    margin: 0 auto;
+
+  }
+  .social-icons {
+    width: 100% !important; 
+    justify-content: center;
+  }
+
+  /* Terminal/tecnologías */
+  .contenedor-tecnologias {
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    gap: 0.8rem;
+    padding: 1rem;
+  }
+
+  .tecnologia__icono, .tecnologia svg {
+    width: 40px;
+    height: 40px;
+  }
+}
+
 @media (max-width: 390px) {
   .about-window{
     width: 340px;
+  }
+  .content{ 
+    width: auto;
+  }
+  .content-card{
+    width: 100%; 
+  }
+  .container-exp{ 
+    width: 100%;
+    margin: 0 auto;
+  }
+  .profile-container{
+    width: 70%;
+    margin: 0 auto; 
   }
 }
 

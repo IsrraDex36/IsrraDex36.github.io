@@ -27,8 +27,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 2000; 
+  z-index: 1000; 
   opacity: 0; 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   animation: aparecer 0.5s ease-out 0.5s forwards; 
 } 
 
@@ -269,11 +272,32 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 415px) {
+  #chat-button {  
+    bottom: 15px;
+    right: 15px;
+    width: 48px;
+    height: 48px; 
+  }
+  
   #chat-box {
-    width: calc(100% - 40px);
-    height: calc(100% - 120px);
-    bottom: 80px;
-    right: 20px;
+    width: calc(100% - 100px);
+    max-width: none;
+    height: 60vh;
+    max-height: 500px;
+    bottom: 70px;
+    right: 15px;
+    left: auto;
+    border-radius: var(--radio-borde) var(--radio-borde) 0 0;
+  }
+
+}
+
+@media (max-width: 390px) {
+  #chat-button {   
+    left: 29px;  
+  }
+  #chat-box {
+    right: auto; 
   }
 }
