@@ -214,13 +214,13 @@ body {
     transform: scale(1.1);
 }
 
-.floating-back-container {
+.floating-back-container { 
     position: fixed;
-    bottom: 2rem;
-    left: 2rem;
+    top: 2rem; 
+    right: 2rem; 
     display: flex;
     align-items: center;
-    z-index: 100;
+    z-index: 1000;
 }
 
 .floating-back-button {
@@ -243,15 +243,9 @@ body {
     background-color: #bba909;
 }
 
-.floating-back-button i {
-    width: 24px;
-    height: 24px;
-    stroke-width: 2;
-}
-
 .floating-back-tooltip {
     position: absolute;
-    left: 60px;
+    right: 60px; /* Cambia left por right para mover el mensaje al lado izquierdo */
     background: var(--color-bg-secondary);
     color: var(--color-text-primary);
     padding: 8px 12px;
@@ -259,13 +253,13 @@ body {
     font-size: 0.9rem;
     white-space: nowrap;
     opacity: 0;
-    transform: translateX(10px);
+    transform: translateX(-10px); /* Ajusta la dirección del desplazamiento */
     transition: all 0.3s ease;
     pointer-events: none;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-.floating-back-container:hover .floating-back-tooltip {
+.floating-back-button:hover + .floating-back-tooltip {
     opacity: 1;
     transform: translateX(0);
 }
@@ -285,7 +279,7 @@ body {
 
 .floating-back-container {
     position: fixed;
-    bottom: 2rem;
+    top: 2rem;
     right: 2rem;
     display: flex;
     align-items: center;
