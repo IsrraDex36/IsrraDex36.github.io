@@ -1,5 +1,4 @@
 # 🚀 Portafolio Profesional - Jonathan Isrrael Caballero Morales  
-<h3 align="center">Portafolio interactivo de un Ingeniero de Software | Desarrollador Full Stack Jr</h3>  
 
 ![370shots_so](https://github.com/user-attachments/assets/9b3fb515-df4b-434a-97bc-3b060a8025f8)
 
