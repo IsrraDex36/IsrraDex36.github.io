@@ -109,8 +109,7 @@ body {
     transition: all 0.2s ease;
 }
 
-.tech-tag:hover {
-    background-color: var(--color-accent-light);
+.tech-tag:hover { 
     transform: translateY(-2px);
 }
 
