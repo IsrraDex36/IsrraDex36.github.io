@@ -34,7 +34,7 @@
 }
 
 body.light-mode {
-    --bg-dark: -webkit-linear-gradient(180deg, #d7d7f5,rgb(228, 228, 247),#d7d7f5);
+    --bg-dark: -webkit-linear-gradient(180deg, #eef0f1,#e7e7ee,#eef0f1);
     --primary: #BBE1FA;
     --secondary: #3282B8;
     --accent: #000000;
@@ -42,10 +42,8 @@ body.light-mode {
     --text: #1B262C;
     --bg-card: #caccd34f;
     --color-ti-os: 10 109 228;
-    --color-mas: #8f9ba39c;
-    
-}
-
+    --color-mas: #8f9ba39c; 
+}                         
 /* Estilos del ícono de cambio de tema */
 #theme-toggle .icon svg {
     transition: transform 0.3s ease, color 0.3s ease;
