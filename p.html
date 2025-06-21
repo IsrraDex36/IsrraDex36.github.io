@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Stack Tecnológico</title>
+    <style>
+        :root {
+            --color-fondo: #1a1a2e;
+            --color-tarjeta: #16213e;
+            --color-accento: #0f3460;
+            --texto-primario: #e6e6e6;
+            --texto-secundario: #b8b8b8;
+            --rojo: #ff5c5c;
+            --amarillo: #ffbd44;
+            --verde: #00ca4e;
+            --azul: #4361ee;
+            --morado: #7209b7;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Fira Code', monospace, sans-serif;
+        }
+        
+        body {
+            background-color: var(--color-fondo);
+            color: var(--texto-primario);
+            padding: 2rem;
+            min-height: 100vh;
+        }
+        
+        .encabezado {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .encabezado__titulo {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, var(--azul), var(--morado));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .encabezado__descripcion {
+            font-size: 1.1rem;
+            color: var(--texto-secundario);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .contenedor-bento {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .categoria {
+            background-color: var(--color-tarjeta);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .categoria:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+        
+        .categoria__cabecera {
+            background-color: var(--color-accento);
+            padding: 0.8rem 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+        }
+        
+        .controles-terminal {
+            display: flex;
+            gap: 0.5rem;
+            position: absolute;
+            left: 1rem;
+        }
+        
+        .control {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        
+        .control--rojo { background-color: var(--rojo); }
+        .control--amarillo { background-color: var(--amarillo); }
+        .control--verde { background-color: var(--verde); }
+        
+        .categoria__titulo {
+            font-weight: 600;
+            color: var(--texto-primario);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .contenedor-tecnologias {
+            padding: 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .tecnologia {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            transition: transform 0.2s ease;
+        }
+        
+        .tecnologia:hover {
+            transform: scale(1.1);
+        }
+        
+        .tecnologia__icono {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+        }
+        
+        .tecnologia__nombre {
+            font-size: 0.8rem;
+            color: var(--texto-secundario);
+            text-align: center;
+        }
+        
+        /* Estilos específicos por categoría */
+        .categoria--frontend { border-top: 3px solid var(--azul); }
+        .categoria--backend { border-top: 3px solid var(--verde); }
+        .categoria--bases-datos { border-top: 3px solid var(--amarillo); }
+        .categoria--herramientas { border-top: 3px solid var(--rojo); }
+        .categoria--movil { border-top: 3px solid var(--morado); }
+        
+        @media (max-width: 768px) {
+            .contenedor-bento {
+                grid-template-columns: 1fr;
+            }
+            
+            .contenedor-tecnologias {
+                grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="encabezado">
+        <h1 class="encabezado__titulo">Mi Stack Tecnológico</h1>
+        <p class="encabezado__descripcion">Tecnologías y herramientas que utilizo, organizadas por categorías</p>
+    </header>
+    
+    <div class="contenedor-bento">
+        <!-- Frontend -->
+        <section class="categoria categoria--frontend">
+            <header class="categoria__cabecera">
+                <div class="controles-terminal">
+                    <div class="control control--rojo"></div>
+                    <div class="control control--amarillo"></div>
+                    <div class="control control--verde"></div>
+                </div>
+                <h2 class="categoria__titulo">Frontend</h2>
+            </header>
+            <div class="contenedor-tecnologias">
+                <article class="tecnologia">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="tecnologia__icono" alt="HTML5">
+                    <span class="tecnologia__nombre">HTML5</span>
+                </article>
+                <article class="tecnologia">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" class="tecnologia__icono" alt="CSS3">
+                    <span class="tecnologia__nombre">CSS3</span>
+                </article>
+                <article class="tecnologia">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="tecnologia__icono" alt="JavaScript">
+                    <span class="tecnologia__nombre">JavaScript</span>
+                </article>
+                <article class="tecnologia">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" class="tecnologia__icono" alt="TypeScript">
+                    <span class="tecnologia__nombre">TypeScript</span>
+                </article>
+                <article class="tecnologia">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="tecnologia__icono" alt="React">
+                    <span class="tecnologia__nombre">React</span>
+                </article>
+                <article class="tecnologia">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" class="tecnologia__icono" alt="Vue.js">
+                    <span class="tecnologia__nombre">Vue.js</span>
+                </article>
+                <article class="tecnologia">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" class="tecnologia__icono" alt="Sass">
+                    <span class="tecnologia__nombre">Sass</span>
+                </article>
+                <article class="tecnologia">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" class="tecnologia__icono" alt="Tailwind">
+                    <span class="tecnologia__nombre">Tailwind</span>
+                </article>
+            </div>
+        </section>
+        
+        <!-- Backend -->
+        <section class="categoria categoria--backend">
+            <header class="categoria__cabecera">
+                <div class="controles-terminal">
+                    <div class="control control--rojo"></div>
+                    <div class="control control--amarillo"></div>
+                    <div class="control control--verde"></div>
+                </div>
+                <h2 class="categoria__titulo">Backend</h2>
+            </header>
+            <div class="contenedor-tecnologias">
+                <article class="tecnologia">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" class="tecnologia__icono" alt="Node.js">
+                    <span class="tecnologia__nombre">Node.js</span>
+                </article>
+                <article class="tecnologia">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" class="tecnologia__icono" alt="Express">
+                    <span class="tecnologia__nombre">Express</span>
+                </article>
+                <article class="tecnologia">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="tecnologia__icono" alt="Python">
+                    <span class="tecnologia__nombre">Python</span>
+                </article>
+                <article class="tecnologia">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" class="tecnologia__icono" alt="Django">
+                    <span class="tecnologia__nombre">Django</span>
+                </article>
+                <article class="tecnologia">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" class="tecnologia__icono" alt="Java">
+                    <span class="tecnologia__nombre">Java</span>
+                </article>
+                <article class="tecnologia">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" class="tecnologia__icono" alt="Spring">
+                    <span class="tecnologia__nombre">Spring</span>
+                </article>
+                <article class="tecnologia">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" class="tecnologia__icono" alt="PHP">
+                    <span class="tecnologia__nombre">PHP</span>
+                </article>
+                <article class="tecnologia">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg" class="tecnologia__icono" alt="Laravel">
+                    <span class="tecnologia__nombre">Laravel</span>
+                </article>
+            </div>
+        </section>
+        
+        <!-- Bases de Datos -->
+        <section class="categoria categoria--bases-datos">
+            <header class="categoria__cabecera">
+                <div class="controles-terminal">
+                    <div class="control control--rojo"></div>
+                    <div class="control control--amarillo"></div>
+                    <div class="control control--verde"></div>
+                </div>
+                <h2 class="categoria__titulo">Bases de Datos</h2>
+            </header>
+            <div class="contenedor-tecnologias">
+                <article class="tecnologia">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" class="tecnologia__icono" alt="MongoDB">
+                    <span class="tecnologia__nombre">MongoDB</span>
+                </article>
+                <article class="tecnologia">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" class="tecnologia__icono" alt="MySQL">
+                    <span class="tecnologia__nombre">MySQL</span>
+                </article>
+                <article class="tecnologia">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" class="tecnologia__icono" alt="PostgreSQL">
+                    <span class="tecnologia__nombre">PostgreSQL</span>
+                </article>
+                <article class="tecnologia">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" class="tecnologia__icono" alt="Redis">
+                    <span class="tecnologia__nombre">Redis</span>
+                </article>
+                <article class="tecnologia">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" class="tecnologia__icono" alt="Firebase">
+                    <span class="tecnologia__nombre">Firebase</span>
+                </article>
+                <article class="tecnologia">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg" class="tecnologia__icono" alt="Oracle">
+                    <span class="tecnologia__nombre">Oracle</span>
+                </article>
+            </div>
+        </section>
+        
+        <!-- Herramientas -->
+        <section class="categoria categoria--herramientas">
+            <header class="categoria__cabecera">
+                <div class="controles-terminal">
+                    <div class="control control--rojo"></div>
+                    <div class="control control--amarillo"></div>
+                    <div class="control control--verde"></div>
+                </div>
+                <h2 class="categoria__titulo">Herramientas</h2>
+            </header>
+            <div class="contenedor-tecnologias">
+                <article class="tecnologia">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" class="tecnologia__icono" alt="Git">
+                    <span class="tecnologia__nombre">Git</span>
+                </article>
+                <article class="tecnologia">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" class="tecnologia__icono" alt="GitHub">
+                    <span class="tecnologia__nombre">GitHub</span>
+                </article>
+                <article class="tecnologia">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" class="tecnologia__icono" alt="Docker">
+                    <span class="tecnologia__nombre">Docker</span>
+                </article>
+                <article class="tecnologia">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" class="tecnologia__icono" alt="Figma">
+                    <span class="tecnologia__nombre">Figma</span>
+                </article>
+                <article class="tecnologia">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" class="tecnologia__icono" alt="VSCode">
+                    <span class="tecnologia__nombre">VSCode</span>
+                </article>
+                <article class="tecnologia">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/webpack/webpack-original.svg" class="tecnologia__icono" alt="Webpack">
+                    <span class="tecnologia__nombre">Webpack</span>
+                </article>
+            </div>
+        </section>
+        
+        <!-- Móvil -->
+        <section class="categoria categoria--movil">
+            <header class="categoria__cabecera">
+                <div class="controles-terminal">
+                    <div class="control control--rojo"></div>
+                    <div class="control control--amarillo"></div>
+                    <div class="control control--verde"></div>
+                </div>
+                <h2 class="categoria__titulo">Móvil</h2>
+            </header>
+            <div class="contenedor-tecnologias">
+                <article class="tecnologia">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="tecnologia__icono" alt="React Native">
+                    <span class="tecnologia__nombre">React Native</span>
+                </article>
+                <article class="tecnologia">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" class="tecnologia__icono" alt="Flutter">
+                    <span class="tecnologia__nombre">Flutter</span>
+                </article>
+                <article class="tecnologia">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg" class="tecnologia__icono" alt="Android">
+                    <span class="tecnologia__nombre">Android</span>
+                </article>
+                <article class="tecnologia">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg" class="tecnologia__icono" alt="iOS">
+                    <span class="tecnologia__nombre">iOS</span>
+                </article>
+                <article class="tecnologia">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" class="tecnologia__icono" alt="Kotlin">
+                    <span class="tecnologia__nombre">Kotlin</span>
+                </article>
+                <article class="tecnologia">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg" class="tecnologia__icono" alt="Swift">
+                    <span class="tecnologia__nombre">Swift</span>
+                </article>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
