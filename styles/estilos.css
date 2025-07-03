@@ -983,7 +983,7 @@ transform: translateY(-50%) translateX(0);
 .window-header {
     background-color: var(--primary-color);
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     padding: 10px;
 }
 
